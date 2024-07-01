@@ -28,5 +28,6 @@
 static const int EVENT_TYPE_SIZE = 128;
 static const unsigned int DFT_PATH_MAX = 1024 * 4;
 static const char SEPARATOR = ';';
+static const char NULL_FILE = '\0';
 
 #endif  // DFTRACER_CONSTANTS_H
