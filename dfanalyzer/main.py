@@ -163,7 +163,8 @@ def load_objects(line, fn, time_granularity, time_approximate, condition_fn):
     if line is not None and line !="" and len(line) > 0 and "[" != line[0] and line != "\n" :
         val = {}
         try:
-            val = json.loads(line)
+            unicode_line = ''.join([i if ord(i) < 128 else '#' for i in line])
+            val = json.loads(unicode_line)
             logging.debug(f"Loading dict {val}")
             if "name" in val:
                 d["name"] = val["name"]
